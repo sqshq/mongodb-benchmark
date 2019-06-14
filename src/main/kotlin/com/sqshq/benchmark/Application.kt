@@ -42,8 +42,8 @@ data class Record(val id: ObjectId,
 class Benchmark(private val mongoTemplate: MongoTemplate) {
 
     private val collectionName = "record"
-    private val documentCount = 500_000
-    private val runCount = 1
+    private val documentCount = 2_000_000
+    private val runCount = 3
 
     @PostConstruct
     fun init() {
