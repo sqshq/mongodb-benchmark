@@ -42,7 +42,7 @@ data class Record(val id: ObjectId,
 class Benchmark(private val mongoTemplate: MongoTemplate) {
 
     private val collectionName = "record"
-    private val documentCount = 2_000_000
+    private val documentCount = 1_000_000
     private val runCount = 3
 
     @PostConstruct
@@ -57,6 +57,7 @@ class Benchmark(private val mongoTemplate: MongoTemplate) {
         thread {
             println("Starting benchmark")
             for (i in 1..runCount) {
+                println("\nrun #$i")
                 run()
             }
         }

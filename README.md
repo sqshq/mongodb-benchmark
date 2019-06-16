@@ -1,34 +1,60 @@
-# Mongodb Benchmark (bulk insert / update / delete)
+# MongoDB Benchmark (bulk insert / update / delete)
 
-results on c5d.2xlarge (benchmark app + mongod on the same instance)
+results on c5d.2xlarge, Amazon Linux 2 (benchmark app + mongod on the same instance)
+MongoDB version: 4.0.10 enterprise
 
-### Default mongo settings
+### Default settings
 ```
-bulk insert: 55742ms (36363.6 per sec)
-bulk update: 54013ms (37037.0 per sec)
-bulk delete: 28916ms (71428.6 per sec)
+run #1
+bulk insert: 24215ms (41666.7 per sec)
+bulk update: 21462ms (47619.0 per sec)
+bulk delete: 13278ms (76923.1 per sec)
 
-bulk insert: 49865ms (40816.3 per sec)
-bulk update: 52914ms (38461.5 per sec)
-bulk delete: 29127ms (68965.5 per sec)
+run #2
+bulk insert: 23929ms (43478.3 per sec)
+bulk update: 22805ms (45454.5 per sec)
+bulk delete: 12630ms (83333.3 per sec)
 
-bulk insert: 45647ms (44444.4 per sec)
-bulk update: 54144ms (37037.0 per sec)
-bulk delete: 29123ms (68965.5 per sec)
+run #3
+bulk insert: 20913ms (50000.0 per sec)
+bulk update: 22753ms (45454.5 per sec)
+bulk delete: 12783ms (83333.3 per sec)
 ```
 
 ### --nojournal
 
 ```
-bulk insert: 62480ms (32258.1 per sec)
-bulk update: 42709ms (47619.0 per sec)
-bulk delete: 23294ms (86956.5 per sec)
+run #1
+bulk insert: 23345ms (43478.3 per sec)
+bulk update: 18327ms (55555.6 per sec)
+bulk delete: 10365ms (100000.0 per sec)
 
-bulk insert: 56701ms (35714.3 per sec)
-bulk update: 42912ms (47619.0 per sec)
-bulk delete: 23457ms (86956.5 per sec)
+run #2
+bulk insert: 21196ms (47619.0 per sec)
+bulk update: 18917ms (55555.6 per sec)
+bulk delete: 10351ms (100000.0 per sec)
 
-bulk insert: 56768ms (35714.3 per sec)
-bulk update: 42355ms (47619.0 per sec)
-bulk delete: 23283ms (86956.5 per sec)
+run #3
+bulk insert: 19437ms (52631.6 per sec)
+bulk update: 18858ms (55555.6 per sec)
+bulk delete: 10332ms (100000.0 per sec)
+```
+
+### --storageEngine inMemory
+
+```
+run #1
+bulk insert: 22678ms (45454.5 per sec)
+bulk update: 17726ms (58823.5 per sec)
+bulk delete: 9947ms (111111.1 per sec)
+
+run #2
+bulk insert: 19979ms (52631.6 per sec)
+bulk update: 18275ms (55555.6 per sec)
+bulk delete: 10290ms (100000.0 per sec)
+
+run #3
+bulk insert: 19574ms (52631.6 per sec)
+bulk update: 18478ms (55555.6 per sec)
+bulk delete: 10060ms (100000.0 per sec)
 ```
