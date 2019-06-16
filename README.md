@@ -1,7 +1,8 @@
 # MongoDB Benchmark (bulk insert / update / delete)
 
-results on c5d.2xlarge, Amazon Linux 2 (benchmark app + mongod on the same instance)
-MongoDB version: 4.0.10 enterprise
+results on `c5d.2xlarge`, `Amazon Linux 2` (benchmark app + mongod on the same instance)
+
+MongoDB version: `4.0.10 enterprise`
 
 ### Default settings
 ```
